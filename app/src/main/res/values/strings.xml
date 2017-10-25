@@ -1,0 +1,21 @@
+<resources>
+    <!-- My Tracks-->
+    <string name="app_name">LocationTracker</string>
+    <string name="my_tracks_title">My Tracks</string>
+    <string name="my_tracks_empty_list_notification">You have no tracks recorded.\nClick on New Track button to start recording tracks.</string>
+    <string name="new_track_button">NEW TRACK</string>
+
+    <!--New Tracks-->
+    <string name="new_track_title">New Track</string>
+    <string name="new_track_name">Name:</string>
+    <string name="new_track_description">Description:</string>
+    <string name="new_track_name_hint">Enter name</string>
+    <string name="new_track_description_hint">Enter description</string>
+    <string name="new_track_start_button">START</string>
+
+    <!--Settings-->
+    <string name="settings_title">Settings</string>
+    <string name="sampling_rate">Sampling rate</string>
+    <string name="speed">Speed</string>
+    <string name="home_city">Home city</string>
+</resources>
