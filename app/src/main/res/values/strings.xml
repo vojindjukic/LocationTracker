@@ -18,4 +18,20 @@
     <string name="sampling_rate">Sampling rate</string>
     <string name="speed">Speed</string>
     <string name="home_city">Home city</string>
+    <string name="done_button">DONE</string>
+
+    <!--Track Details-->
+    <string name="add_location_button">ADD LOCATION</string>
+
+    <!--Add Location-->
+    <string name="add_location_title">Add Location</string>
+    <string name="add_location_latitude">Latitude</string>
+    <string name="add_location_longitude">Longitude</string>
+    <string name="add_location_altitude">Altitude</string>
+    <string name="altitude_units">m</string>
+    <string name="add_location_speed">Speed</string>
+    <string name="add_button">ADD</string>
+    <string name="add_location_speed_default_value">0</string>
+    <string name="add_location_speed_units">m/s</string>
+
 </resources>

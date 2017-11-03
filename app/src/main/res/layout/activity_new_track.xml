@@ -10,12 +10,10 @@
     <TextView
         android:id="@+id/textViewTitle"
         android:text="@string/new_track_title"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textAlignment="center"/>
+        style="@style/title"/>
 
     <LinearLayout
-    android:layout_marginTop="40dp"
+    android:layout_marginTop="50dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -54,9 +52,7 @@
         android:id="@+id/new_track_button"
         android:text="@string/new_track_start_button"
         android:onClick="onStartButton"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_alignParentBottom="true"/>
+        style="@style/button"/>
 
 
 

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+                 xmlns:tools="http://schemas.android.com/tools"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 tools:context="com.bignerdranch.android.locationtracker.MyTracks">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:text="@string/add_location_title"
+        style="@style/title"/>
+
+    <LinearLayout
+        android:layout_below="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Latitude -->
+        <TextView
+            android:text="@string/add_location_latitude"
+            android:labelFor="@+id/editTextLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editTextLatitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:drawableEnd="@drawable/degree"/>
+
+        <!--Longitude-->
+        <TextView
+            android:text="@string/add_location_longitude"
+            android:labelFor="@+id/editTextLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/editTextLongitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:drawableEnd="@drawable/degree"/>
+
+        <!-- Altitude -->
+        <TextView
+            android:text="@string/add_location_altitude"
+            android:labelFor="@+id/editTextAltitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextAltitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/textViewAltitudeUnits"
+            android:inputType="numberDecimal"/>
+
+        <TextView
+            android:id="@+id/textViewAltitudeUnits"
+            android:text="@string/altitude_units"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"/>
+
+        </RelativeLayout>
+
+
+        <!-- Speed -->
+        <TextView
+            android:text="@string/add_location_speed"
+            android:labelFor="@+id/editTextSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/editTextSpeed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/textViewSpeedUnits"
+                android:text="@string/add_location_speed_default_value"
+                android:inputType="numberDecimal"
+                android:enabled="false"/>
+
+            <TextView
+                android:id="@+id/textViewSpeedUnits"
+                android:text="@string/add_location_speed_units"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <!-- New Track button -->
+    <Button
+        android:id="@+id/buttonNewTrack"
+        android:text="@string/add_button"
+        android:onClick="onAdd"
+        style="@style/button"/>
+
+</RelativeLayout>

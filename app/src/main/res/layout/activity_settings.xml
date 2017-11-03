@@ -58,4 +58,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/home_city_label"/>
+
+    <Button
+        android:id="@+id/settings_done_button"
+        android:onClick="click_on_done_button"
+        android:text="@string/done_button"
+        style="@style/button"/>
 </RelativeLayout>

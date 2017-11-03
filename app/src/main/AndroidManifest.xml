@@ -21,6 +21,10 @@
         </activity>
         <activity android:name=".SettingsActivity">
         </activity>
+        <activity android:name=".TrackDetailsActivity">
+        </activity>
+        <activity android:name=".AddLocationActivity">
+        </activity>
     </application>
 
 </manifest>

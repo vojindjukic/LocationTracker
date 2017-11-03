@@ -2,6 +2,7 @@ package com.bignerdranch.android.locationtracker;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -19,5 +20,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
 
+    }
+
+    public void click_on_done_button(View view) {
+
+        finish();
     }
 }
