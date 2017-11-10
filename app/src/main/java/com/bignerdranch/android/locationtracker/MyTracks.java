@@ -22,18 +22,19 @@ public class MyTracks extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_tracks);
-
-        listView = (ListView) findViewById(R.id.mytracks_list);
-        adapter = new TracksAdapter(this);
-        listView.setAdapter(adapter);
-
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        listView = (ListView) findViewById(R.id.mytracks_list);
+        adapter = new TracksAdapter(this);
+        listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+        if(adapter.getCount() > 0){
+            findViewById(R.id.textViewEmptyList).setVisibility(View.GONE);
+        }
 
     }
 
@@ -43,29 +44,6 @@ public class MyTracks extends AppCompatActivity {
     }
 
     public void click_on_new_track_button (View view){
-
-//        SQLiteDatabase db = new LocationHelper(this).getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put("name", "ime");
-//        values.put("description", "opis");
-//        db.insert("Tracks", null, values);
-
-//        SQLiteDatabase db = openOrCreateDatabase("LocationDB", Context.MODE_PRIVATE, null);
-//        db.execSQL("CREATE TABLE IF NOT EXISTS tracks(id INTEGER, name VARCHAR,description VARCHAR);");
-//        db.execSQL("INSERT INTO tracks VALUES(1, 'ime', 'opis');");
-       // SQLiteDatabase db = openOrCreateDatabase("LocationDB", Context.MODE_PRIVATE, null);
-
-//        String sql = "INSERT INTO Tracks VALUES ('ime', 'opis');";
-        //compile the statement and start a transaction
-//        LocationHelper lHelper = new LocationHelper(this);
-//        SQLiteDatabase db = lHelper.getWritableDatabase();
-//        SQLiteStatement statement = db.compileStatement(sql);
-//        db.beginTransaction();
-//        statement.clearBindings();
-//        statement.execute();
-//        statement.close();
-//        db.setTransactionSuccessful();
-//        db.endTransaction();
 
         Intent newTrackIntent = new Intent(this, NewTrackActivity.class);
         startActivity(newTrackIntent);

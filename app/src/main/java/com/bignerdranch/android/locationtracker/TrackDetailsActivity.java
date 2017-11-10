@@ -11,31 +11,58 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.bignerdranch.android.locationtracker.Database.LocationHelper;
+import com.bignerdranch.android.locationtracker.Model.Location;
+
+import java.util.ArrayList;
 
 public class TrackDetailsActivity extends AppCompatActivity {
 
+    private static ArrayList<Location> locationsList;
+    private long trackId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track_details);
 
-        TextView myView = (TextView)findViewById(R.id.textViewTitle);
+        locationsList = new ArrayList<Location>();
 
-        LocationHelper LocationHelper = new LocationHelper(this);
-        SQLiteDatabase db = LocationHelper.getReadableDatabase();
-        Cursor cursor = db.query("Tracks", new String[]{"name"}, null, null, null, null, null);
-        cursor.moveToFirst();
+//        LocationHelper LocationHelper = new LocationHelper(this);
+//        SQLiteDatabase db = LocationHelper.getReadableDatabase();
+//        Cursor cursor = db.query("Tracks", new String[]{"name"}, null, null, null, null, null);
+//        cursor.moveToFirst();
 
-        while (!cursor.isAfterLast()) {
-//            myView.setText(String.valueOf(cursor.getCount()));
-            myView.setText(cursor.getString(0));
-            cursor.moveToNext();
-        }
+//        while (!cursor.isAfterLast()) {
+//            myView.setText(cursor.getString(0));
+//            cursor.moveToNext();
+//        }
 
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+
+        Bundle extras = getIntent().getExtras();
+        String caller =  extras.getString("caller");
+        switch (caller){
+
+            case "NewTrackActivity":
+                String trackName = extras.getString("trackName");
+                trackId = extras.getLong("trackId");
+                TextView myView = (TextView) findViewById(R.id.textViewTitle);
+                myView.setText(trackName + " Details");
+                break;
+            case "AddLocationActivity":
+                locationsList.add((Location)extras.getSerializable("location"));
+                break;
+        }
+    }
+
     public void onDoneButton(View view) {
+
+        new LocationHelper(this).saveLocations(trackId, locationsList);
+
         finish();
     }
 
