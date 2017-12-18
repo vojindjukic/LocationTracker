@@ -33,5 +33,6 @@ public class NewTrackActivity extends AppCompatActivity {
         intent.putExtra("trackName", trackName);
         intent.putExtra("caller", "NewTrackActivity");
         startActivity(intent);
+        finish();
     }
 }

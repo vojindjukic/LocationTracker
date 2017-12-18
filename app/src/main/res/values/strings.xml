@@ -23,8 +23,8 @@
     <!--Track Details-->
     <string name="add_location_button">ADD LOCATION</string>
 
-    <!--Add Location-->
-    <string name="add_location_title">Add Location</string>
+    <!--Add MyLocation-->
+    <string name="add_location_title">Add MyLocation</string>
     <string name="add_location_latitude">Latitude</string>
     <string name="add_location_longitude">Longitude</string>
     <string name="add_location_altitude">Altitude</string>

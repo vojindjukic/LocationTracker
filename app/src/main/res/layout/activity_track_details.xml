@@ -21,12 +21,11 @@
 
 
     <ListView
-        android:id="@+id/mytracks_list"
+        android:id="@+id/mylocations_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_above="@+id/new_track_button"
-        android:layout_below="@+id/settings_button"
+        android:layout_above="@+id/done_button"
+        android:layout_below="@+id/buttonAddLocation"
         android:layout_marginBottom="15dp"
         ></ListView>
 
@@ -39,7 +38,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/new_track_button"
+        android:id="@+id/done_button"
         android:onClick="onDoneButton"
         android:text="@string/done_button"
         style="@style/button"/>

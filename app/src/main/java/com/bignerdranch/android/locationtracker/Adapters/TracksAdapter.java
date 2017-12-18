@@ -45,4 +45,10 @@ public class TracksAdapter extends ArrayAdapter<Track> {
         return convertView;
     }
 
+    public String getName(View view){
+
+        String name = ((TextView)view.findViewById(R.id.textViewName)).getText().toString();
+        return name;
+    }
+
 }

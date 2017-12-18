@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 
-import com.bignerdranch.android.locationtracker.Model.Location;
+import com.bignerdranch.android.locationtracker.Model.MyLocation;
 import com.bignerdranch.android.locationtracker.Model.Track;
 
 import java.util.ArrayList;
@@ -52,9 +52,9 @@ public class LocationHelper extends SQLiteOpenHelper {
         return tracks;
     }
 
-    public void saveLocations(long trackId, ArrayList<Location> locationsList){
+    public void saveLocations(long trackId, ArrayList<MyLocation> locationsList){
         for (int i = 0; i < locationsList.size(); i++){
-            Location location = locationsList.get(i);
+            MyLocation location = locationsList.get(i);
             ContentValues values = new ContentValues();
             values.put(LTContractClass.Locations.MY_TRACK_ID_COLUMN, trackId);
             values.put(LTContractClass.Locations.LATITUDE_COLUMN, location.getLatitude());
@@ -65,10 +65,22 @@ public class LocationHelper extends SQLiteOpenHelper {
             db.insert(LTContractClass.Locations.TABLE_NAME, null, values);
             db.close();
         }
-
     }
 
-    @Override
+    public ArrayList<MyLocation> getLocation(long trackId) {
+        String[] id = new String[]{String.valueOf(trackId)};
+        ArrayList<MyLocation> locationsList = new ArrayList<>();
+        Cursor cursor = getReadableDatabase().query(
+                LTContractClass.Locations.TABLE_NAME, null, LTContractClass.Locations.MY_TRACK_ID_COLUMN + " = ?", id, null, null, null, null);
+        while (cursor.moveToNext()){
+            MyLocation location = new MyLocation(Double.valueOf(cursor.getString(2)), Double.valueOf(cursor.getString(3)), Double.valueOf(cursor.getString(4)), Double.valueOf(cursor.getString(5)));
+            locationsList.add(location);
+        }
+        return locationsList;
+    }
+
+
+        @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
